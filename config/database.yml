@@ -2,7 +2,3 @@ production:
   adapter: postgresql
   encoding: unicode
   url: <%= ENV['DATABASE_URL'] %>
-  # Esta es la línea que falta:
-  cable:
-    adapter: postgresql
-    url: <%= ENV['DATABASE_URL'] %>
