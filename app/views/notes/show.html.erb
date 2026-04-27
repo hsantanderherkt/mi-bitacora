@@ -1,0 +1,23 @@
+<div class="max-w-2xl mx-auto mt-12">
+  <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100">
+    <div class="bg-indigo-600 px-8 py-4">
+      <h2 class="text-white text-sm font-semibold uppercase tracking-wider">Detalle de la Nota</h2>
+    </div>
+    
+    <div class="p-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4"><%= @note.title %></h1>
+      <div class="prose prose-indigo text-gray-700 leading-relaxed mb-8">
+        <%= @note.content %>
+      </div>
+
+      <div class="flex items-center border-t border-gray-100 pt-6 space-x-4">
+        <%= link_to "Editar", edit_note_path(@note), class: "bg-amber-500 hover:bg-amber-600 text-white px-5 py-2 rounded-lg font-medium transition" %>
+        <%= link_to "Volver a la lista", notes_path, class: "text-gray-500 hover:text-indigo-600 font-medium" %>
+        
+        <div class="flex-grow text-right">
+          <%= button_to "Eliminar nota", @note, method: :delete, form: { data: { confirm: "¿Estás seguro?" } }, class: "text-red-500 hover:text-red-700 text-sm font-semibold" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
